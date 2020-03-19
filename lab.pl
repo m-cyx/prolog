@@ -157,4 +157,5 @@ get_word([32|T],Word,Word,T):-!.
 get_word([H|T],W,Word,A2):-append(W,[H],W1), get_word(T,W1,Word,A2).
 
 
-%дз 4,5, 11-27.
+%дз 4,5, 11-27. 
+%тестирую внесение изменений 
