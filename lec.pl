@@ -51,3 +51,12 @@ in_list([_|T],El):-in_list(A,El).
 
 b_a_p(A,0,Perm1):-write_str(Perm1),nl,!, fail.
 b_a_p(A,N,Perm):- in_list(A,El), N1 is N-1, b_a_p(A, [El,Perm]).
+
+% или 
+
+build_all_razm:-
+    read_str(A,N),read(K),b_a_r(A,[]).
+in_list_exlude([El|T],El,T).
+in_list_exlude([H|T],El,T):-in_list_exlude(T,El,T).
+b_a_r([],Perm1):-write_str(Perm1),nl,!,fail.
+b_a_r(A,Perm):-in_list_exlude(A,El,A1),b_a_r(A1,[El|Perm]).
