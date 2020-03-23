@@ -113,6 +113,16 @@ min([H|T],M):-min(T,M,H).
 min([],M,M):-!.
 min([H|T],M,Mi):-H<Mi, !, min(T,M,H).
 min([_|T],M,Mi):-min(T,M,Mi).
+        % предикат, который возвращает true, если элемент есть в списке
+pr3_4:- 
+        write('size of list: '), 
+        read(N), 
+        r_list(A,N), 
+        write('Wich el to search?'), 
+        read(El), 
+        search(A,El).
+search([X|_],X):-!.
+search([_|Y],El):- search(Y,El).
 
         % произведение листа А
 pr_list(A,Pr):-pr_list(A,Pr,1).
