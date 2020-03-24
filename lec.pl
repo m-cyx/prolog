@@ -64,3 +64,30 @@ in_list_exlude([El|T],El,T).
 in_list_exlude([H|T],El,T):-in_list_exlude(T,El,T).
 b_a_r([],Perm1):-write_str(Perm1),nl,!,fail.
 b_a_r(A,Perm):-in_list_exlude(A,El,A1),b_a_r(A1,[El|Perm]).
+
+    % Лекция 5 комбинаторные приколы (Задачи полного перебора)
+% Является ли последовательность подпоследовательностью заданной 
+sub_posl([],_):-!.
+sub_posl(_,[]):-fail,!.
+sub_posl([H|Sub_list],[H,List]):-sub_posl(Sub_list,List),!.
+sub_posl(Sub_list,[_,List]):-sub_posl(Sub_list,List).
+% Этот же предикат проверяет, является ли первый аргумент комбинаторным объектом, составленныи из первого аргумента 
+% Напишем предикат, который построить все подмножества 
+% Применение: sub_set(A,[1,2,3]).
+sub_set([],_).
+sub_set(_,[]):-fail.
+sub_set([H|Sub_set],[H,Set]):-sub_set(Sub_set,Set).
+sub_set(Sub_set,[H,Set]):-sub_set(Sub_set,Set).
+
+
+%английская задача 
+sprava_next(A,B,[C]):-fail.
+sprava_next(A,B,[A|[B|Tail]]).
+sprava_next(A,B,[_|List]):-sprava_next(A,B,List).
+
+sleva_next(A,B,[C]):-fail.
+sleva_next(A,B,[B|[A|Tail]]).
+sleva_next(A,B,[_|List]):-sleva_next(A,B,List).
+
+next_to(A,B,List):-sprava_next(A,B,List).
+next_to(A,B,List):-sleva_next(A,B,List).
