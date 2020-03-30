@@ -143,7 +143,21 @@ pr3_4:-
 search([X|_],X):-!.
 search([_|Y],El):- search(Y,El).
 
-        % произведение листа А
+        % Предикат, который получает номер элемента в списке 
+pr3_5:-
+        write("Enter kol-vo el: "),
+        read(N),
+        write("Enter list: "), nl,
+        r_list(A,N),
+        write("Enter el wich u wanna know the number: "),
+        read(P),
+        number(A,P,Num),
+        write("Number is: "),
+        write(Num).
+number([H|_],H,1):-!.
+number([_|T],P,N):-number(T,P,N1),N is N1+1.
+
+        % Произведение листа А
 pr_list(A,Pr):-pr_list(A,Pr,1).
 pr_list([],Pr,Pr):-!.
 pr_list([Head|Tail],Pr,P):- P1 is P*Head, pr_list(Tail,Pr,P1).
