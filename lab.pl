@@ -132,6 +132,9 @@ min([],M,M):-!.
 min([H|T],M,Mi):-H<Mi, !, min(T,M,H).
 min([_|T],M,Mi):-min(T,M,Mi).
 
+ 
+                
+
         % 3.4 Предикат, который возвращает true, если элемент есть в списке
 pr3_4:- 
         write('size of list: '), 
@@ -215,3 +218,33 @@ get_word([H|T],W,Word,A2):-append(W,[H],W1),get_word(T,W1,Word,A2).
 раз, какова длина строки.*/
 
 %дз 4,5, 11-27. 
+
+       % номер максимального эл в списке 
+       max_numb:-
+        read(N), 
+        r_list(A,N), 
+        max(A,M), 
+        write(M).
+max([H|T],M):-max(T,M,H).
+max([],M,M):-!.
+max([H|T],M,Ma):-H>Ma, !, max(T,M,H).
+max([_|T],M,Ma):-max(T,M,Ma).
+number(A,P,),
+write("Number is: "),
+write(Num).
+number([H|_],H,1):-!.
+number([_|T],P,N):-number(T,P,N1),N is N1+1.
+
+% 5.3 определить самое частое слово
+       pr5_3:-read_str(A,N), get_words(A,Wkrds,K).
+
+
+
+unique(A, Result) :- 
+	unique(A, Result, []), !.
+unique([],[],_):-!.
+unique([H|T], [H|T], Found) :-
+	not(member(H, Found)),
+	unique(T, T, [H|Found]),!.
+unique([_|T], Result, Found) :-
+	unique(T, Result, Found). 
