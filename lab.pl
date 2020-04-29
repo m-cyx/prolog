@@ -220,7 +220,7 @@ get_word([H|T],W,Word,A2):-append(W,[H],W1),get_word(T,W1,Word,A2).
 %дз 4,5, 11-27. 
 
        % номер максимального эл в списке 
-       max_numb:-
+      /*  max_numb:-
         read(N), 
         r_list(A,N), 
         max(A,M), 
@@ -229,12 +229,12 @@ max([H|T],M):-max(T,M,H).
 max([],M,M):-!.
 max([H|T],M,Ma):-H>Ma, !, max(T,M,H).
 max([_|T],M,Ma):-max(T,M,Ma).
-number(A,P,),
+number(A,P,Ma),
 write("Number is: "),
 write(Num).
 number([H|_],H,1):-!.
 number([_|T],P,N):-number(T,P,N1),N is N1+1.
-
+ */
 % 5.3 определить самое частое слово
        pr5_3:-read_str(A,N), get_words(A,Wkrds,K).
 
