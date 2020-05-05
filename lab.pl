@@ -51,18 +51,30 @@ max(_,Y,Y).
         % 2.2 Максимум из трёх чисел.
 max3(X,Y,U,Z):-max(Y,U,K),max(X,K,Z).
 
-        % 2.3 Факториал числа 
-        fact(0,1):-!.
-fact(N,X):-N1 is N-1,fact(N1,X1),X is X1*N.
+        % 2.3 Факториал числа рекурсия вверх
+fact(0,1):-!.
+fact(N,X):-
+        N1 is N-1,
+        fact(N1,X1),
+        X is X1*N.
+        % 2.3 Факториал числа рекурсия вниз
 fact1(N,X):-fact2(0,1,N,X).
 fact2(N,K,N,K):-!.
-fact2(I,K,N,X):-I1 is I+1,K1 is K*I1,fact2(I1,K1,N,X).
+fact2(I,K,N,X):-
+        I1 is I+1,
+        K1 is K*I1,
+        fact2(I1,K1,N,X).
 
         % 2.4 Число Фибоначи заданного номера.
 fibo(1,1):-!.
 fibo(2,1):-!.
-fibo(N,X):-N1 is N-1,fibo(N1,X1),N2 is N-2,fibo(N2,X2),X is X1+X2.
-    
+fibo(N,X):-
+        N1 is N-1,
+        fibo(N1,X1),
+        N2 is N-2,
+        fibo(N2,X2),
+        X is X1+X2.
+        % 2.4 Число Фибоначи заданного номера второй вариант.
 fibo1(N,X):-fibo2(1,1,2,N,X).
 fibo2(_,K,N,N,K):-!.
 fibo2(J,K,I,N,X):-I1 is I+1, K1 is J+K, fibo2(K,K1,I1,N,X).
@@ -71,11 +83,19 @@ fibo2(J,K,I,N,X):-I1 is I+1, K1 is J+K, fibo2(K,K1,I1,N,X).
 pr(2):-!.
 pr(X):-pr1(2,X).
 pr1(X,X):-!.
-pr1(I,X):-Y is X mod I, not(Y=0), I1 is I+1, pr1(I1,X).
+pr1(I,X):-
+        Y is X mod I, 
+        not(Y=0), 
+        I1 is I+1, 
+        pr1(I1,X).
     
         % 2.7 Сумма цифр числа
 sumcifr(X,X):- X<10, !.
-sumcifr(X,S):-L is X mod 10, B is X div 10, sumcifr(B,S1), S is S1+L.
+sumcifr(X,S):-
+        L is X mod 10, 
+        B is X div 10, 
+        sumcifr(B,S1), 
+        S is S1+L.
 
         % 2.8 Найти наибольший простой делитель числа N.
 npr_d(N,X):-npd(N,N,X).
@@ -85,6 +105,7 @@ npd(I,N,X):-I1 is I-1,ndp(I1,N,X).
         % 2.9 НОД Двух чисел
 nod(X,Y,Y):-R is X mod Y,(R = 0),!.
 nod(X,Y,D):-R is X mod Y,nod(Y,R,D).
+
 % Lab_3 Списки
 %========================================================================
 
@@ -239,7 +260,7 @@ number([_|T],P,N):-number(T,P,N1),N is N1+1.
        pr5_3:-read_str(A,N), get_words(A,Wkrds,K).
 
 
-
+% Предикат получающий на вход список, возвращает этот же список без повторений. [1,1,2,3,3,4,5,6,6] ---> [1,2,2,4,5,6]
 unique(A, Result) :- 
 	unique(A, Result, []), !.
 unique([],[],_):-!.
