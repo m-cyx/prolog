@@ -6,3 +6,10 @@
 или не встречаются вообще. 
 */
 
+char(a).
+char(b).
+char(c).
+char(d).
+char(e).
+char(f).
+
