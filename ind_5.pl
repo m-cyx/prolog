@@ -42,7 +42,7 @@ list_kol_unic(In,Out):-                           % то же что и выше
 %----------------------------------------------------------------------------------------------------------------------------------------------
 prov(In,K1,K2):-                                  %генерация : проверка, что буква встречается два раза
 list_kol_unic(In,Out),
-count_el_in_list(1,Out,CountedFirst),                   % Считает сколько раз первый элемент встречается в списке List и выводит ответ в Count
+count_el_in_list(1,Out,CountedFirst),             % Считает сколько раз первый элемент встречается в списке List и выводит ответ в Count
 K1=CountedFirst,
 count_el_in_list(2,Out,CountedSecond),
 K2=CountedSecond.
@@ -68,7 +68,7 @@ run(9):-tell('.\\out.txt'),
     prov([X1,X2,X3,X4,X5,X6,X7,X8,X9],1,4),
     write(X1),  write(X2),  write(X3),  write(X4),  write(X5),  write(X6),  write(X7),  write(X8),  write(X9),
     nl,fail.
-run(9):-!,told.
+run(9):-!,told. %680400 ответов
 
 run(10):-tell('.\\out.txt'),
     char(X1),   char(X2),   char(X3),   char(X4),   char(X5),   char(X6),   char(X7),   char(X8),   char(X9),   char(X10),
@@ -77,7 +77,7 @@ run(10):-tell('.\\out.txt'),
     nl,fail.
 run(10):-!,told.
 
-run(11):-tell('.\\out.txt'), %не фурычит
+run(11):-tell('.\\out.txt'), %не фурычит, дофига ответов
     char(X1),char(X2),char(X3),char(X4),char(X5),char(X6),char(X7),char(X8),char(X9),char(X10),char(X11),
     prov([X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11],3,4),
     write(X1),write(X2),write(X3),write(X4),write(X5),write(X6),write(X7),write(X8),write(X9),write(X10),write(X11),nl,fail.
