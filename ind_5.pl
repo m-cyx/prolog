@@ -54,3 +54,13 @@ write(X1),  write(X2),  write(X3),  write(X4),  write(X5),  write(X6),  write(X7
 nl,
 fail.
 run(8):-!,told.
+%----------------------------------------------------------------------------------------------------------------------------------------------
+run(0):-write("incorrect conditions! try again."),  nl, fail. % проверка на дурака
+run(1):-write("incorrect conditions! try again."),  nl, fail.
+run(2):-write("incorrect conditions! try again."),  nl, fail.
+run(3):-write("incorrect conditions! try again."),  nl, fail.
+run(4):-write("incorrect conditions! try again."),  nl, fail.
+run(5):-write("incorrect conditions! try again."),  nl, fail.
+run(6):-write("incorrect conditions! try again."),  nl, fail.
+run(7):-write("incorrect conditions! try again."),  nl, fail.
+%----------------------------------------------------------------------------------------------------------------------------------------------
