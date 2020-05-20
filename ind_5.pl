@@ -51,8 +51,7 @@ run(8):-tell('.\\out.txt'), %открываю входной поток
 char(X1),   char(X2),   char(X3),   char(X4),   char(X5),   char(X6),   char(X7),   char(X8),
 prov([X1,X2,X3,X4,X5,X6,X7,X8],0,4), %ровно K2(4 буквы по 2 раза) и K1(0 раз) остальные
 write(X1),  write(X2),  write(X3),  write(X4),  write(X5),  write(X6),  write(X7),  write(X8),
-nl,
-fail.
+nl,fail.
 run(8):-!,told.
 %----------------------------------------------------------------------------------------------------------------------------------------------
 run(0):-write("incorrect conditions! try again."),  nl, fail. % проверка на дурака
@@ -64,3 +63,22 @@ run(5):-write("incorrect conditions! try again."),  nl, fail.
 run(6):-write("incorrect conditions! try again."),  nl, fail.
 run(7):-write("incorrect conditions! try again."),  nl, fail.
 %----------------------------------------------------------------------------------------------------------------------------------------------
+run(9):-tell('.\\out.txt'),
+    char(X1),   char(X2),   char(X3),   char(X4),   char(X5),   char(X6),   char(X7),   char(X8),   char(X9),
+    prov([X1,X2,X3,X4,X5,X6,X7,X8,X9],1,4),
+    write(X1),  write(X2),  write(X3),  write(X4),  write(X5),  write(X6),  write(X7),  write(X8),  write(X9),
+    nl,fail.
+run(9):-!,told.
+
+run(10):-tell('.\\out.txt'),
+    char(X1),   char(X2),   char(X3),   char(X4),   char(X5),   char(X6),   char(X7),   char(X8),   char(X9),   char(X10),
+    prov([X1,X2,X3,X4,X5,X6,X7,X8,X9,X10],2,4),
+    write(X1),  write(X2),  write(X3),  write(X4),  write(X5),  write(X6),  write(X7),  write(X8),  write(X9),  write(X10),
+    nl,fail.
+run(10):-!,told.
+
+run(11):-tell('.\\out.txt'), %не фурычит
+    char(X1),char(X2),char(X3),char(X4),char(X5),char(X6),char(X7),char(X8),char(X9),char(X10),char(X11),
+    prov([X1,X2,X3,X4,X5,X6,X7,X8,X9,X10,X11],3,4),
+    write(X1),write(X2),write(X3),write(X4),write(X5),write(X6),write(X7),write(X8),write(X9),write(X10),write(X11),nl,fail.
+run(11):-!,told.
