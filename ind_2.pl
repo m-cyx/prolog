@@ -14,8 +14,8 @@ check(E1, [], ListIn ,R):-
 check(El,[_|T],ListIn,R):-
     check(El,T,ListIn,R).
 %----------------------------------------------------------------------------------------------------------------------------------------------
-count_el_in_list(El,List,Count):-count_el_in_list(El,List,Count,0). % Считает сколько раз El встречается в списке List и выводит ответ в Count
-count_el_in_list(_,[],Count,Count):-!.
-count_el_in_list(El,[El|T],Count,Cur):-Cur1 is Cur+1, count_el_in_list(El,T,Count,Cur1),!.
-count_el_in_list(El,[_|T],Count,Cur):-count_el_in_list(El,T,Count,Cur).
+teeest(El,List,Count):-teeest(El,List,Count,0). % Считает сколько раз El встречается в списке List и выводит ответ в Count
+teeest(_,[],Count,Count):-!.
+teeest(El,[El|T],Count,Cur):-Cur1 is Cur+1, teeest(El,T,Count,Cur1),!.
+teeest(El,[_|T],Count,Cur):-teeest(El,T,Count,Cur).
 %----------------------------------------------------------------------------------------------------------------------------------------------
