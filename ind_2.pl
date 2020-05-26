@@ -25,7 +25,7 @@ count_el_in_list(_,[],Count,Count):-!.
 count_el_in_list(El,[El|T],Count,Cur):-Cur1 is Cur+1, count_el_in_list(El,T,Count,Cur1),!.
 count_el_in_list(El,[_|T],Count,Cur):-count_el_in_list(El,T,Count,Cur).
 %----------------------------------------------------------------------------------------------------------------------------------------------
-list_kol_each_povtorov(L,L1,L2):-kol(L,L1,L2,[]). % получает список кол-ва посторов каждого элемента списка
+list_kol_each_povtorov(L,L1,L2):-kol(L,L1,L2,[]). % получает список кол-ва повторов каждого элемента списка
 kol(_,[],L2,L2):-!.                               % list_kol_each_povtorov([1,1,2,2],[1,2],Out). --> Out = [2, 2].
 kol(L,[H|T],L2,Tmp):-
     count_el_in_list(H,L,C), 
@@ -41,3 +41,5 @@ run(L):-
     list_kol_each_povtorov(L,L1,L2), 
     write("L2 - kolvo povtorov kazdogo elementa ishodnongo spiska :"), nl,
     writeList(L2).
+%                                                                               consult('ind_2.pl').
+%                                                                               run([a,a,b,c,c,d]).
