@@ -98,37 +98,37 @@ can_fly(glob,1).
 can_fly(lemongrab,0).
 can_fly(pupirka,1).
 
-question1(X1):-	write("Is it human ?"),nl,
+question1(X1):-	write("		Is human ?"),nl,
 				write("1. Yes"),nl,
 				write("0. NO"),nl,
 				read(X1).
 
-question2(X2):-	write("Good?"),nl,
+question2(X2):-	write("		Good?"),nl,
 				write("1. Yes"),nl,
 				write("0. NO"),nl,
 				read(X2).
 
-question3(X3):-	write("Made of candy?"),nl,
+question3(X3):-	write("		Made of candy?"),nl,
 				write("1. Yes"),nl,
 				write("0. NO"),nl,
 				read(X3).
 
-question4(X4):-	write("Have magic?"),nl,
+question4(X4):-	write("		Have magic?"),nl,
 				write("1. yes"),nl,
 				write("0. NO"),nl,
 				read(X4).
 
-question5(X5):-	write("Male?"),nl,
+question5(X5):-	write("		Male?"),nl,
 				write("1. Yes"),nl,
 				write("0. NO"),nl,
 				read(X5).
 
-question6(X6):-	write("Adult?"),nl,
+question6(X6):-	write("		Adult?"),nl,
 				write("1. yes"),nl,
 				write("0. NO"),nl,
 				read(X6).
 
-question7(X7):-	write("Can fly?"),nl,
+question7(X7):-	write("		Can fly?"),nl,
 				write("1. Yes"),nl,
 				write("0. NO"),nl,
 				read(X7).				
@@ -143,4 +143,4 @@ pr:-	question1(X1),question2(X2),question3(X3),question4(X4),question5(X5),quest
 		male(X,X5),
 		adult(X,X6),
 		can_fly(X,X7),
-		write(X).
+		write("Answer is: "),write(X).
