@@ -7,14 +7,17 @@ r_str(X,A,B):-
 	append(B,[X],B1),
 	get0(X1),
 	r_str(X1,A,B1).
-human_r(X,Y):-	repeat, (human(X,Y) -> (nl,write(X),nl,write(Y),write("."),
+%---------------------------------ШТУКИ ДЛЯ ОБУЧЕНИЯ (только для факта ЧЕЛОВЕК)----дописать для каждго нового факта?????
+human_r(X,Y):-	repeat, (human(X,Y) -> (nl,write("human"),write(" "),write(X),write(" "),write(Y),write("."),
 				retract(human(X,Y))) ;X=nil,Y=nil).
-pr2:-
+% ТУТ ДЛЯ КАЖДОГО ФАКТА 
+%---------------------------------
+pr2:- %для добавления? 
 	tell('.\\111.txt'),
 	human_r(X,_),
 	X=nil,
 	told.
-pr3:-
+pr3:- %для чтения?
 	see('.\\111.txt'),
 	get0(Sym),
 	read_human(Sym),
@@ -28,8 +31,7 @@ read_human(_):-
 	get0(Sym),
 	read_human(Sym).
 
-
-	
+%--------------------------------------База фактов 
 
 
 human(finn,1).

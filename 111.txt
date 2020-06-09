@@ -1,17 +1,9 @@
 
-finn
-1.
-jake
-0.
-bmo
-0.
-bubblegum
-0.
-iceking
-1.
-glob
-0.
-lemongrab
-0.
-pupirka
-0.
+human finn 1.
+human jake 0.
+human bmo 0.
+human bubblegum 0.
+human iceking 1.
+human glob 0.
+human lemongrab 0.
+human pupirka 0.
