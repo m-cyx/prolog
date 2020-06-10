@@ -1,4 +1,12 @@
 :-dynamic human/2.
+:-dynamic good/2.
+:-dynamic madefromcandy/2.
+:-dynamic magic/2.
+:-dynamic male/2.
+:-dynamic adult/2.
+:-dynamic /2.
+
+
 read_str(A):-
 	get0(X),
 	r_str(X,A,[]).
@@ -10,11 +18,14 @@ r_str(X,A,B):-
 %---------------------------------ШТУКИ ДЛЯ ОБУЧЕНИЯ (только для факта ЧЕЛОВЕК)----дописать для каждго нового факта?????
 human_r(X,Y):-	repeat, (human(X,Y) -> (nl,write("human"),write(" "),write(X),write(" "),write(Y),write("."),
 				retract(human(X,Y))) ;X=nil,Y=nil).
+
+good_r(X,Y):-	repeat, (good(X,Y) -> (nl,write("good"),write(" "),write(X),write(" "),write(Y),write("."),
+				retract(good(X,Y))) ;X=nil,Y=nil).
 % ТУТ ДЛЯ КАЖДОГО ФАКТА 
 %---------------------------------
 pr2:- %для добавления? 
 	tell('.\\111.txt'),
-	human_r(X,_),
+	human_r(X,_),good_r(X,_),
 	X=nil,
 	told.
 pr3:- %для чтения?
@@ -98,39 +109,39 @@ can_fly(glob,1).
 can_fly(lemongrab,0).
 can_fly(pupirka,1).
 
-question1(X1):-	write("		Is human ?"),nl,
+question1(X1):-	write("		Is human?"),nl,
 				write("1. Yes"),nl,
-				write("0. NO"),nl,
+				write("0. No"),nl,
 				read(X1).
 
 question2(X2):-	write("		Good?"),nl,
 				write("1. Yes"),nl,
-				write("0. NO"),nl,
+				write("0. No"),nl,
 				read(X2).
 
 question3(X3):-	write("		Made of candy?"),nl,
 				write("1. Yes"),nl,
-				write("0. NO"),nl,
+				write("0. No"),nl,
 				read(X3).
 
 question4(X4):-	write("		Have magic?"),nl,
 				write("1. yes"),nl,
-				write("0. NO"),nl,
+				write("0. No"),nl,
 				read(X4).
 
 question5(X5):-	write("		Male?"),nl,
 				write("1. Yes"),nl,
-				write("0. NO"),nl,
+				write("0. No"),nl,
 				read(X5).
 
 question6(X6):-	write("		Adult?"),nl,
 				write("1. yes"),nl,
-				write("0. NO"),nl,
+				write("0. No"),nl,
 				read(X6).
 
 question7(X7):-	write("		Can fly?"),nl,
 				write("1. Yes"),nl,
-				write("0. NO"),nl,
+				write("0. No"),nl,
 				read(X7).				
 
 
