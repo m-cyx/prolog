@@ -1,5 +1,4 @@
-hello_world :-
-    write('Hello, World!'), nl.
+
 
 pow(A,B,X):-                        % степень 
     pw(A,B,X,A,1).
