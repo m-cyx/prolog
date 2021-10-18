@@ -42,6 +42,7 @@ is_br_si(X,Y):-sister(X,Y).
 uncle(X,Y):-man(X),child(Y,M),is_br_si(Z,M),married(X,Z).
 aunt(X,Y):-woman(X),child(Y,M),is_br_si(Z,M),married(X,Z).
 
+
 % Lab_2 Алгоритмы работы с числами 
 %========================================================================
 
