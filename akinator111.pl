@@ -4,7 +4,7 @@
 :-dynamic magic/2.
 :-dynamic male/2.
 :-dynamic adult/2.
-:-dynamic /2.
+:-dynamic can_fly/2.
 
 
 read_str(A):-
