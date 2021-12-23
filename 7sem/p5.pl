@@ -16,7 +16,7 @@ el_no(List,Num,El):-el_no(List,Num,1,El).
 el_no([H|_],Num,Num,H):-!.
 el_no([_|Tail],Num,Ind,El):-Ind1 is Ind+1,el_no(Tail,Num,Ind1,El).
 
-pred5_1 :-
+zad5_1 :-
     List=[_,_,_,_,_],
 	in_list(List,[red,englishman,_,_,_]),
 	in_list(List,[_,spanish,_,dog,_]),
@@ -36,7 +36,7 @@ pred5_1 :-
 	in_list(List,[_,WHO2,_,zebra,_]),
 	write(List), nl, write(WHO1), nl, write(WHO2).
 
-pred5_2 :-
+zad5_2 :-
     List=[_,_,_],
 	in_list(List,[_,black]),
     in_list(List,[_,white]),
@@ -46,7 +46,7 @@ pred5_2 :-
     in_list(List,[chernov,C]), C \= black,
 	write(List).
 
-pred5_3 :-
+zad5_3 :-
     List=[_,_,_],
     in_list(List,[_,white,_]),
     in_list(List,[_,green,_]),
@@ -59,7 +59,7 @@ pred5_3 :-
     in_list(List,[natasha,_,green]),
 	write(List).
 
-pred5_4 :-
+zad5_4 :-
     List = [_,_,_],
 	in_list(List,[_,_,has_sister,_]),
 	in_list(List,[_,_,has_no_sister,_]),
@@ -72,7 +72,7 @@ pred5_4 :-
 	in_list(List,[semyonov,A,_,oldest]), A \= turner,
 	write(List).
 	
-pred5_5 :-
+zad5_5 :-
     List = [_,_,_,_],
 	in_list(List,[bottle,_]),
 	in_list(List,[glass,_]),
@@ -90,7 +90,7 @@ pred5_5 :-
 	in_list(List,[jug, K]), K \= kvass,
 	write(List).
 
-pred5_6 :-
+zad5_6 :-
     List = [_,_,_,_],
 	in_list(List, [voronov,_]),
 	in_list(List, [pavlov,_]),
@@ -104,7 +104,7 @@ pred5_6 :-
 	(in_list(List, [voronov,artist]) -> (in_list(List, [L,writer]), L \= lyevitskiy)),
 	write(List).
 
-pred5_7 :-
+zad5_7 :-
     List = [_,_,_],
 	in_list(List, [michael,_,_,_]),
 	in_list(List, [simon,_,_,_]),
@@ -123,7 +123,7 @@ pred5_7 :-
 	in_list(List, [_,_,cricket,first]),
 	write(List).
 
-pred5_8_4 :-
+zad5_8_4 :-
     List=[_],
     (
         (
